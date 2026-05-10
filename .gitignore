@@ -29,3 +29,6 @@ logs/
 # Debug
 .gemini/
 antigravity/
+
+.vercel
+.env*.local
