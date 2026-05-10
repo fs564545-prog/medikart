@@ -7,8 +7,8 @@ import { Provider } from 'react-redux'
 import store from './store.js'
 import axios from 'axios'
 
-// Configure Axios default base URL to use the deployed backend
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'https://medikart-1bgh.vercel.app';
+// Configure Axios default base URL to use the correct deployed backend
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'https://medikart-e4t2.vercel.app';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
