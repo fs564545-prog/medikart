@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
-import { ArrowRight, Search, ShieldCheck, Truck, Clock, Star, Loader2 } from 'lucide-react';
+import { ArrowRight, Search, ShieldCheck, Truck, Clock, Star, Loader2, Phone, User } from 'lucide-react';
 import { fetchMedicines } from '../slices/medicineSlice';
 import Button from '../components/Button';
 import ProductCard from '../components/ProductCard';
@@ -216,6 +216,59 @@ const Home = () => {
           </div>
         )}
       </section>
+
+      {/* ── Help & Support Section ── */}
+      <FadeInView>
+        <section className="glass-panel p-8 sm:p-12 rounded-[32px] border border-white/10 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary-purple/10 rounded-full blur-[80px] -z-10 group-hover:bg-primary-purple/20 transition-colors duration-500" />
+          
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="space-y-4 text-center md:text-left max-w-xl">
+              <h2 className="text-3xl sm:text-4xl font-black title-font tracking-tight">
+                Need <span className="text-primary-purple">Help?</span>
+              </h2>
+              <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
+                Hamari team aapki madad ke liye hamesha taiyar hai. Agar aapko medicine dhoondne ya order karne mein koi masla ho raha hai, to direct contact karein.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <div className="flex items-center gap-4 justify-center md:justify-start group/item">
+                  <div className="w-12 h-12 rounded-2xl bg-primary-purple/10 flex items-center justify-center text-primary-purple group-hover/item:bg-primary-purple group-hover/item:text-white transition-all duration-300">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-text-secondary uppercase tracking-widest font-bold">Call / WhatsApp</p>
+                    <p className="text-lg font-black text-white tracking-tight">0315-0678863</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 justify-center md:justify-start group/item">
+                  <div className="w-12 h-12 rounded-2xl bg-accent-purple/10 flex items-center justify-center text-accent-purple group-hover/item:bg-accent-purple group-hover/item:text-white transition-all duration-300">
+                    <User size={22} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-text-secondary uppercase tracking-widest font-bold">Representative</p>
+                    <p className="text-lg font-black text-white tracking-tight">Fahad</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:block">
+              <Button 
+                variant="outline" 
+                className="!rounded-2xl border-white/10 hover:bg-white/5 py-8 px-10 flex flex-col items-center gap-3"
+                onClick={() => window.open('https://wa.me/923150678863', '_blank')}
+              >
+                <div className="bg-success/10 p-3 rounded-xl text-success">
+                  <Phone size={24} />
+                </div>
+                <span className="font-bold text-sm">Chat on WhatsApp</span>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </FadeInView>
 
     </div>
   );
